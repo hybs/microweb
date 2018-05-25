@@ -25,9 +25,36 @@
 			<div class="swiper-slide"><img src="img/page4.jpg"></div>
 			<div class="swiper-slide"><img src="img/page5.jpg"></div>
 			<div class="swiper-slide"><img src="img/page6.jpg"></div>
-			<div class="swiper-slide"><span>slide 7</span></div>
-			<div class="swiper-slide"><span>slide 8</span></div>
-			<div class="swiper-slide"><span>slide 9</span></div>
+			<div class="swiper-slide"><img src="img/page7.jpg"></div>
+			<div class="swiper-slide"><img src="img/page8.jpg"></div>
+			<div class="swiper-slide">
+				<div class="logo"><img src="img/logo.jpg"></div>
+				<div class="content">
+					<div class="list-title">联系我们</div>
+					<small>填写你的相关问题，Sidda会在两个工作日内回复</small>
+					<div class="input-group">
+						<span>姓名</span>
+						<div><input type="text" name="name"></div>	
+					</div>
+					<div class="input-group">
+						<span>邮箱</span>
+						<div><input type="text" name="email"></div>
+					</div>
+					<div class="input-group">
+						<span>电话</span>
+						<div><input type="text" name="phone"></div>					
+					</div>
+					<div class="input-group">
+						<span>您的问题</span>
+						<div><textarea></textarea></div>				
+					</div>
+					<div><input type="button" value="提交"></div>
+					<div class="footer">
+						<div class="list-title">购买地址</div>
+						<img src="img/code.png">
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
@@ -37,8 +64,17 @@
 				$(this).addClass('selected');
 				$(this).siblings().removeClass('selected');
 				var index = $(this).index();
-				var num = index*3+1;
-				mySwiper.slideTo(num,1000,false);
+				switch(index){
+					case 0:
+						mySwiper.slideTo(1,1000,false);
+						break;
+					case 1:
+						mySwiper.slideTo(4,1000,false);
+						break;
+					case 2:
+						mySwiper.slideTo(9,1000,false);
+						break;
+				}
 			});
 
 			var mySwiper = new Swiper('.swiper-container',{
