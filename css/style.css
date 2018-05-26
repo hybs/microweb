@@ -100,3 +100,45 @@ textarea {
 	outline: none;
 	resize: none;
 }
+
+
+.section {
+    position:relative;
+    margin-bottom:20px;
+}
+.mouse-icon {
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:5px;
+    z-index:100;
+    width:30px;
+    height:30px;
+    margin:0 auto;
+}
+.mouse-icon .wheel {
+    width:30px;
+    height:30px;
+    background:transparent url("../img/web-swipe-tip.png") no-repeat;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: mouse-anim-drop;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 5px;
+    text-indent:-1000em;
+}
+@keyframes mouse-anim-drop {
+	0% {opacity:0;top:5px;}
+	30% {opacity:1;top:0px;}
+	100% {opacity:0;top:-5px;}
+}
+@keyframes mouse-anim-drop {
+	0% {opacity:0;top:5px;}
+	30% {opacity:1;top:0px;}
+	100% {opacity:0;top:-5px;}
+}
