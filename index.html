@@ -65,21 +65,35 @@
 				var index = $(this).index();
 				switch(index){
 					case 0:
-						mySwiper.slideTo(1,1000,false);
+						mySwiper.slideTo(0,1000,false);
 						break;
 					case 1:
-						mySwiper.slideTo(4,1000,false);
+						mySwiper.slideTo(3,1000,false);
 						break;
 					case 2:
-						mySwiper.slideTo(9,1000,false);
+						mySwiper.slideTo(8,1000,false);
 						break;
 				}
 			});
 
 			var mySwiper = new Swiper('.swiper-container',{
-				loop: true,
+				loop: false,
 				direction: 'vertical',
-				pagination: '.swiper-pagination'
+				pagination: '.swiper-pagination',
+				onSlideChangeStart: function(swiper){
+					if(swiper.activeIndex>=1 && swiper.activeIndex<3){
+						$('.nav-container ul li').siblings().removeClass('selected');
+						$('.nav-container ul li').eq(0).addClass('selected');
+					}
+					if(swiper.activeIndex>=3 && swiper.activeIndex<8) {
+						$('.nav-container ul li').siblings().removeClass('selected');
+						$('.nav-container ul li').eq(1).addClass('selected');
+					}
+					if (swiper.activeIndex==8) {
+						$('.nav-container ul li').siblings().removeClass('selected');
+						$('.nav-container ul li').eq(2).addClass('selected');
+					}
+				}
 			})
 		})
 	</script>
